@@ -29,6 +29,7 @@
         builder = ./build.sh;
         buildInputs = [
           pkgs.bash
+	  pkgs.openssl
           pkgs.quicklispPackages.alexandria
           pkgs.quicklispPackages.hunchentoot
           pkgs.quicklispPackages.serapeum
