@@ -13,6 +13,7 @@
     ("iow" "In Other Words")
     ("lotr" "Lord of the Rings")
     ("n/a" "Not Applicable")
+    ("qotd" "Quote of the Day")
     ("tl;dr" "To Long; Didn't Read")
     ("tldr" "To Long; Didn't Read")
     ))
@@ -45,7 +46,8 @@
              (spinneret:with-html-string
                (:head
                 (:meta :property "og:title" :content question)
-                (:meta :property "og:description" :content "No.")
+                (:meta :property "og:description" :content (format nil "No.~:[~;~:* Just say \"~a\"~]"
+                                                                   (lookup-acronym acronym)))
                 (:style :type "text/css"
                         "html {font-family: sans-serif; width: 100vw; height: 100vh;}"
                         "body {height: 50%; width: 75%; margin: 25% auto;}"
