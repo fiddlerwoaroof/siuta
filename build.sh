@@ -12,6 +12,8 @@ buildPhase() {
 installPhase() {
   mkdir -p "$out"/bin
   mv siuta "$out"/bin
+  mkdir -p "$out"/lib/sbcl/
+  cp "$(dirname "$sbcl")"/../lib/sbcl/sbcl.core "$out"/lib/sbcl/
 }
 
 genericBuild
