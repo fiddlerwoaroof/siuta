@@ -27,9 +27,13 @@
         name = "siuta";
         src = ./.;
         builder = ./build.sh;
+	dontStrip = true;
+	LD_LIBRARY_PATH = "${pkgs.openssl.out}/lib";
         buildInputs = [
           pkgs.bash
-	  pkgs.openssl
+	  pkgs.openssl.dev
+	  pkgs.which
+          pkgs.makeWrapper
           pkgs.quicklispPackages.alexandria
           pkgs.quicklispPackages.hunchentoot
           pkgs.quicklispPackages.serapeum

@@ -14,7 +14,7 @@
       (spinneret:with-html-string
         (:head
          (:meta :property "og:title" :content question)
-         (:meta :property "og:content" :content "No.")
+         (:meta :property "og:description" :content "No.")
          (:style :type "text/css"
                  "html {font-family: sans-serif; width: 100vw; height: 100vh;}"
                  "body {height: 50%; width: 75%; margin: 25% auto;}"
