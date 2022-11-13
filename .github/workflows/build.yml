@@ -29,8 +29,8 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: setup cachix
         run: |
-          cd /
-          nix-env -i jq
+          sudo apt update -y
+          sudo apt install -y jq
           nix-env -iA cachix -f https://cachix.org/api/v1/install
 
       - name: build
