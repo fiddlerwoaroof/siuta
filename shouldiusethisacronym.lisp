@@ -50,7 +50,7 @@
                                                                    (lookup-acronym acronym)))
                 (:style :type "text/css"
                         "html {font-family: sans-serif; width: 100vw; height: 100vh;}"
-                        "body {height: 50%; width: 75%; margin: 25% auto;}"
+                        "body {height: 50%; width: 75%; margin: 6.25% auto;}"
                         ))
                (:h1 question)
                (:div :style "padding-top: 2rem; font-size: 2em;"
