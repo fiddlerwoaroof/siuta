@@ -16,6 +16,9 @@
     ("qotd" "Quote of the Day")
     ("tl;dr" "To Long; Didn't Read")
     ("tldr" "To Long; Didn't Read")
+    ("lol" "Laughing Out Loud")
+    ("fr fr" "???")
+    ("no cap" "wut?")
     ))
 
 (defmethod hunchentoot:acceptor-dispatch-request ((acceptor acceptor) request)
