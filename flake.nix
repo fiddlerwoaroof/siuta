@@ -26,7 +26,7 @@
         default = pkgs.stdenv.mkDerivation {
           inherit system;
           name = "siuta";
-          src = ./src;
+          src = ./.;
           builder = ./build.sh;
           dontStrip = true;
           LD_LIBRARY_PATH = "${pkgs.openssl.out}/lib";
