@@ -43,7 +43,7 @@
             pkgs.sbcl
           ];
         };
-        docker = pkgs.dockerTools.buildImage {
+        docker = pkgs.dockerTools.buildLayeredImage {
           name = "siuta-docker";
           config = {
             Cmd = ["${self.packages.${system}.default}/bin/siuta"];
