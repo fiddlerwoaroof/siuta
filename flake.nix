@@ -22,25 +22,33 @@
     flake-utils.lib.eachDefaultSystem (system: let
       pkgs = nixpkgs.legacyPackages.${system};
     in {
-      packages.default = pkgs.stdenv.mkDerivation {
-        inherit system;
-        name = "siuta";
-        src = ./.;
-        builder = ./build.sh;
-	dontStrip = true;
-	LD_LIBRARY_PATH = "${pkgs.openssl.out}/lib";
-        buildInputs = [
-          pkgs.bash
-	  pkgs.openssl.dev
-	  pkgs.which
-          pkgs.makeWrapper
-          pkgs.quicklispPackages.alexandria
-          pkgs.quicklispPackages.hunchentoot
-          pkgs.quicklispPackages.serapeum
-          pkgs.quicklispPackages.spinneret
-          pkgs.quicklispPackages.uiop
-          pkgs.sbcl
-        ];
+      packages = {
+        default = pkgs.stdenv.mkDerivation {
+          inherit system;
+          name = "siuta";
+          src = ./src;
+          builder = ./build.sh;
+          dontStrip = true;
+          LD_LIBRARY_PATH = "${pkgs.openssl.out}/lib";
+          buildInputs = [
+            pkgs.bash
+            pkgs.openssl.dev
+            pkgs.which
+            pkgs.makeWrapper
+            pkgs.quicklispPackages.alexandria
+            pkgs.quicklispPackages.hunchentoot
+            pkgs.quicklispPackages.serapeum
+            pkgs.quicklispPackages.spinneret
+            pkgs.quicklispPackages.uiop
+            pkgs.sbcl
+          ];
+        };
+        docker = pkgs.dockerTools.buildImage {
+          name = "siuta-docker";
+          config = {
+            Cmd = ["${self.packages.${system}.default}/bin/siuta"];
+          };
+        };
       };
     });
 }
