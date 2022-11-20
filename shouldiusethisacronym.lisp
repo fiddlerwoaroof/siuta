@@ -15,6 +15,7 @@
     ("mia" "Missing In Action")
     ("n/a" "Not Applicable")
     ("qotd" "Quote of the Day")
+    ("siuta" "Should I Use This Acronym")
     ("tl;dr" "To Long; Didn't Read")
     ("tldr" "To Long; Didn't Read")
     ("lol" "Laughing Out Loud")
