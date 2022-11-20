@@ -12,6 +12,7 @@
     ("afaict" "As Far As I Can Tell")
     ("iow" "In Other Words")
     ("lotr" "Lord of the Rings")
+    ("mia" "Missing In Action")
     ("n/a" "Not Applicable")
     ("qotd" "Quote of the Day")
     ("tl;dr" "To Long; Didn't Read")
